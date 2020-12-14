@@ -5,15 +5,20 @@ import { auth } from './firebase';
 import { useStateValue } from './StateProvider';
 import { actionTypes } from './reducer';
 
+
 function Login() {
     const [{}, dispatch] = useStateValue();
 
     const signIn = () => {
-        auth.signInWithPopup(provider).then( result => dispatch({
+        auth
+        .signInWithPopup(provider)
+        .then((result) => {
+            dispatch({
             type: actionTypes.SET_USER,
             user: result.user,
-        }).catch((error) => alert.apply(error.message))
-    };
+        });
+    }).catch((error) => alert.apply(error.message))
+    }
     return (
         <div className='login'>
            <div className='login__container'>
