@@ -12,7 +12,16 @@ function Chat() {
     const [input, setInput] = useState('');
     const [seed, setSeed] = useState('');
     const { roomId } = useParams();
+    const [roomName, serRoomName ] = useState('')
     
+    useEffect(() => {
+        if (roomId){
+            db.collection('rooms').doc(roomId).onSnapshot(snapshot => (
+                setRoomName(snapshot.data().name)
+            ))
+        }
+    }, [roomId])
+
     useEffect(() =>{
         setSeed(Math.floor(Math.random() * 500))
     }, [])
