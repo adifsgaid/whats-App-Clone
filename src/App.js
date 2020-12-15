@@ -1,4 +1,4 @@
-import React from 'react';
+import React  from 'react';
 import './App.css';
 import Sidebar from './Sidebar';
 import Chat from './Chat';
@@ -9,12 +9,12 @@ import { useStateValue } from './StateProvider';
 
 function App() {
 
-  const [{ user }, dispatch] = useStateValue();
+  const [{ user }] = useStateValue();
   
   return (
     <div className="app">
-      {!user ? (
-        <Login/>
+      {! user ? (
+        <Login />
       ) :(
       <div className="app__body">
         <Router>
@@ -29,7 +29,7 @@ function App() {
          </Switch>
         </Router>
       </div>
-      )};
+      )}
     </div>
   );
 }
