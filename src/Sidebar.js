@@ -6,8 +6,9 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import SearchIcon from '@material-ui/icons/Search';
 import './Sidebar.css';
 import SidebarChat from './SidebarChat';
-import db from './firebase'
-import {useStateValue} from './StateProvider'
+import db from './firebase';
+import {useStateValue} from './StateProvider';
+
 function Sidebar() {
     
     const [rooms, setRooms] = useState([]);
