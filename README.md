@@ -13,7 +13,7 @@ This project was build using REACT.
 - CSS
 - GOOGLE Auth
 - RealTime DB 
-- NPM library
+
 
 ### Deployment
 
